@@ -50,36 +50,25 @@
             </div>
           </div>
 
-          <p>
-            <label>Please let us know your favorite color</label>
-          
-            <input class="w-full md:max-w-lg resize-none border h-20" type="text" name="attributes[Favorite color]" form="cartForm" value="{{ cart.attributes['Favorite color'] }}">
-          </p>
-
-          <p>
-            <input
-              form="cartForm"
-              id="agree1"
-              type="checkbox"
-              name="attributes[Agree 1]"
-              form="cartForm"
-              value="Yes"
-              {% if cart.attributes['Agree 1'] == 'Yes' %}checked{% endif %}>
+          <p class="js-agree-cart">
+            <input type="checkbox">
+            <input type="hidden" name="attributes[Agree 1]" form="cartForm" value="No">
 
             <label>Agree 1</label>
           </p>
 
-          <p>
-            <input
-              form="cartForm"
-              id="agree2"
-              type="checkbox"
-              name="attributes[Agree 2]"
-              form="cartForm"
-              value="Yes"
-              {% if cart.attributes['Agree 2'] == 'Yes' %}checked{% endif %}>
+          <p class="js-agree-cart">
+            <input type="checkbox">
+            <input type="hidden" name="attributes[Agree 2]" form="cartForm" value="Yes">
 
             <label>Agree 2</label>
+          </p>
+
+          <p class="js-agree-cart">
+            <input type="checkbox">
+            <input type="hidden" name="attributes[Agree 3]" form="cartForm" value="No">
+
+            <label>Agree 3</label>
           </p>
 
           <div class="w-full my-4 md:w-80">
