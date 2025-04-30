@@ -56,6 +56,12 @@
             <input class="w-full md:max-w-lg resize-none border h-20" type="text" name="attributes[Favorite color]" form="cartForm" value="{{ cart.attributes['Favorite color'] }}">
           </p>
 
+          <p>
+            <input type="checkbox" name="attributes[Agree 1]" form="cartForm" value="{{ cart.attributes['Agree 1'] }}">
+            
+            <label>Agree 1</label>
+          </p>
+
           <div class="w-full my-4 md:w-80">
             {% for block in section.blocks %}
               {% case block.type %}
