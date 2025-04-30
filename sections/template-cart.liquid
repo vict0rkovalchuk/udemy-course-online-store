@@ -7,7 +7,7 @@
       </div>
     </div>
     <div class="max-w-6xl flex flex-col my-10 mx-auto">
-      <form action="{{ routes.cart_url }}" method="POST" novalidate>
+      <form action="{{ routes.cart_url }}" method="POST" novalidate id="cartForm">
         <table class="table-auto divide-y divide-gray-200 my-4 w-full">
           <thead>
             <th class="px-6 py-3 text-left text-sm font-medium text-gray-500">Product</th>
@@ -49,6 +49,13 @@
               <textarea name="note" id="cart_notes" class="w-full md:max-w-lg resize-none border h-20"></textarea>
             </div>
           </div>
+
+          <p>
+            <label>Please let us know your favorite color</label>
+          
+            <input class="w-full md:max-w-lg resize-none border h-20" type="text" name="attributes[Favorite color]" form="cartForm" value="{{ cart.attributes['Favorite color'] }}">
+          </p>
+
           <div class="w-full my-4 md:w-80">
             {% for block in section.blocks %}
               {% case block.type %}
