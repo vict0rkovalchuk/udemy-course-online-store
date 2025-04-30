@@ -59,7 +59,7 @@
 
           <p class="js-agree-cart">
             <input type="checkbox">
-            <input type="hidden" name="attributes[Agree 2]" form="cartForm" value="Yes">
+            <input type="hidden" name="attributes[Agree 2]" form="cartForm" value="No">
 
             <label>Agree 2</label>
           </p>
@@ -104,6 +104,19 @@
       </div>
     </div>
 {% endif %}
+
+
+<script>
+  document.querySelectorAll('.js-agree-cart').forEach(wrapper => {
+    const checkbox = wrapper.querySelector('input[type="checkbox"]');
+    const hiddenInput = wrapper.querySelector('input[type="hidden"]');
+
+    checkbox.addEventListener('change', () => {
+      hiddenInput.value = checkbox.checked ? 'Yes' : 'No';
+    });
+  });
+</script>
+
 
 {% schema %}
   {
